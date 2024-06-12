@@ -63,11 +63,18 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+#renewal {
+  border-radius: 30px;
+  background-color: #FEFAE0;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
 #newapp {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 #feedbackForm, 
 #statustracker {
