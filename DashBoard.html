@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Application Website</title>
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!--Icons links-->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:lambesaurabh77@gmail.com">lambesaurabh77@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 7030794688</span></i>
+        </div>
+
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home<br></a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="./LoginPage.html">Log Out</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+      <div class="container" style="height: 575px;">
+        <div class="row">
+          <div class="col-3  border border-1" id="secondaryDiv">
+            <div class="sidebar">
+              <div class="d-flex align-items-center mb-3">
+                <span class="fs-4">Welcome Saurabh Lambe</span>
+              </div>
+              <hr>
+              <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="./DashBoard.html">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="./StatusHistoryPage.html.html">
+                    <i class="bi bi-table"></i> Application Status
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="./FeedbackForm.html">
+                    <i class="bi bi-grid"></i> Customer Feedback
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <i class="fa fa-passport"></i> Apply for New Passport
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./RenewalApplication.html">
+                    <i class="fa fa-passport"></i> Apply for Renewal Passport
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./Payment.html">
+                    <i class="fa fa-credit-card"></i> Make Payment
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-9 border border-1  border border-2 border-dark " id="feedbackForm">
+            <h3 class="text-center">Welcome to Passport Application HomePage</h3><br>
+            <h5>Steps to Apply for New Passport</h5>
+            <ol type="1">
+                <li>Register/login on the official passport website.</li>
+                <li>Fill the application form, upload required documents.</li>
+                <li>Pay the fee.</li>
+                <li>Schedule appointment.</li>
+                <li>Visit Passport Seva Kendra (PSK) for verification.</li>
+                <li>Track application status.</li>
+              </ol>
+              If you have any questions or concerns about passport application process, please 
+              <a href="https://portal2.passportindia.gov.in/AppOnlineProject/ccgm/informationAction">Contact us</a>. We are here to help you.
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section-->
+  <footer id="footer" class="footer">
+    <div class="container-fluid text-center ">
+      <p>© <span>Copyright Content Owned by Ministry of External Affairs, Government of India</p>
+
+    </div>
+  </footer>
+</body>
+
+</html>

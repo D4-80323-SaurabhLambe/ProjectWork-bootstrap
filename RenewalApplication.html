@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Application Website</title>
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:lambesaurabh77@gmail.com">lambesaurabh77@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 7030794688</span></i>
+        </div>
+
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home<br></a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="./LoginPage.html">Logout</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+      <div class="container" id="signup">
+            <h4 class="text-center">Renewal Application</h4>
+            <div class="container"  style="height: 620px; overflow: auto;">
+              <form action="/submit_passport_application" method="post">
+                <fieldset>
+                  <legend><b>1. Service Required</b></legend>
+                  <div class="form-group">
+                    <div>
+                      <label>1.1 If re-issue, specify reason(s):></label>
+                      <select name="reissue_reason" class="form-control">
+                        <option value="validity_expired_3_years">Validity Expired within 3 years/ Due to Expire</option>
+                        <option value="pages_exhausted">Exhaustion of Pages</option>
+                        <option value="validity_expired_more_than_3_years">Validity Expired more than 3 years ago
+                        </option>
+                        <option value="lost_passport">Lost Passport</option>
+                        <option value="change_in_personal_particulars">Change in Existing Personal Particulars</option>
+                        <option value="damaged_passport">Damaged Passport</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div>
+                    <label>1.2 If change in existing personal particulars, specify reason(s)</label>
+                    <select name="personal_particulars_change_reason" class="form-control">
+                      <option value="appearance">Appearance</option>
+                      <option value="signature">Signature</option>
+                      <option value="given_name">Given Name</option>
+                      <option value="surname">Surname</option>
+                      <option value="dob">Date of Birth</option>
+                      <option value="spouse_name">Spouse Name</option>
+                      <option value="address">Address</option>
+                      <option value="delete_ecr">Delete ECR</option>
+                      <option value="others">Others, Please specify</option>
+                    </select>
+                  </div>
+                  
+                  <label>
+                    <em>Reason for change (if applicable): </em>
+                    <input type="text" name="change_reason" class="form-control" required min="1" max="200"
+                      size="200"><br>
+                  </label>
+                  <br>
+                  <label>1.3 Type of Application:</label>
+                  <label>
+                    <input type="radio" name="application_type" value="normal"> Normal
+                  </label>
+                  <label>
+                    <input type="radio" name="application_type" value="tatkaal"> Tatkaal
+                  </label>
+
+                  <div>
+                    <label>1.4 Type of Passport Booklet:</label>
+                    <select name="passport_booklet_type" class="form-control">
+                      <option value="36_pages">36 Pages</option>
+                      <option value="60_pages">60 Pages</option>
+                    </select>
+                  </div>
+
+                </fieldset>
+
+                <fieldset>
+                  <legend><b>2. Applicant Details</b></legend>
+
+                  <label>
+                  2.1 Given Name:
+                    <input type="text" class="form-control" name="given_name" required min="1" max="45" size="200"><br>
+                    <em>[Given Name means First name followed by Middle name (If any)(Initials not allowed)]</em>
+                  </label>
+
+                  <label>
+                    Surname:
+                    <input type="text" class="form-control" name="surname" required min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    2.2 Are you known by any other names (aliases)?
+                    <input type="radio" name="known_by_other_names" value="yes"> Yes
+                    <input type="radio" name="known_by_other_names" value="no"> No
+                    <br>
+                    <em>If yes, please provide the aliases :</em> <input type="text" class="form-control" name="aliases"
+                      min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    2.3 Have you ever changed your name?
+                    <input type="radio" name="changed_name" value="yes"> Yes
+                    <input type="radio" name="changed_name" value="no"> No
+                    <br>
+                    <em>If yes, please provide the previous name :</em> <input type="text" class="form-control"
+                      name="previous_name" min="1" max="45" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    2.4 Date of Birth:
+                    <input type="date" class="form-control" name="dob" required>
+                  </label>
+                  <br>
+                  <label>
+                    2.5 Place of Birth (Village or Town or City) :
+                    <input type="text" class="form-control" name="place_of_birth" required min="1" max="25" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    District (If born in India) :
+                    <input type="text" class="form-control" name="district" required min="1" max="25" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    State/UT (If born in India):
+                    <input type="text" class="form-control" name="state" required min="1" max="25" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    Region/Country (If born abroad) If born before 15/08/1947 in a place now in Pakistan or
+                    Bangladesh, write "Undivided India" &nbsp; &nbsp;
+                    <input type="text" class="form-control" name="region_country" required min="1" max="25" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    2.6 Gender:
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="transgender"> Transgender
+                  </label><br>
+                  <br>
+                  <label>
+                    2.7 Marital Status:
+                    <select name="marital_status" class="form-control">
+                      <option value="single">Single</option>
+                      <option value="married">Married</option>
+                      <option value="divorced">Divorced</option>
+                      <option value="widow_widower">Widow/Widower</option>
+                      <option value="separated">Separated</option>
+                    </select>
+                  </label><br>
+
+                  <label>
+                    2.8 Citizenship of India by:
+                    <select name="citizenship" class="form-control">
+                      <option value="birth">Birth</option>
+                      <option value="descent">Descent</option>
+                      <option value="registration_naturalization">Registration/Naturalization</option>
+                    </select>
+                  </label><br>
+
+                  <label>
+                    2.9 PAN (If available):
+                    <input type="text" class="form-control" name="pan" min="10" max="10" size="200">
+                  </label>
+                  <br>
+                  <label>
+                    2.10 Voter ID (If available):
+                    <input type="text" class="form-control" name="voter_id" min="10" max="10" size="200">
+                  </label>
+
+                  <label>
+                    2.11 Employment Type:
+                    <select name="employment_type" class="form-control">
+                      <option value="psu">PSU</option>
+                      <option value="government">Government</option>
+                      <option value="statutory_body">Statutory Body</option>
+                      <option value="retired_government_servant">Retired Government Servant</option>
+                      <option value="self_employed">Self Employed</option>
+                      <option value="private">Private</option>
+                      <option value="homemaker">Homemaker</option>
+                      <option value="not_employed">Not Employed</option>
+                      <option value="retired_private_service">Retired-Private Service</option>
+                      <option value="student">Student</option>
+                      <option value="others">Others</option>
+                      <option value="x">Owners, Partners & Directors of companies which are members of CII, FICCI &
+                        ASSOCHAM</option>
+                    </select>
+                  </label>
+
+                  <label>
+                    2.12 If employed in Government/ Statutory Body/ PSU, specify organization name
+                    <input type="text" class="form-control" name="organization_name" size="200">
+                  </label>
+
+                  <label>
+                    2.13 Educational Qualification:
+                    <select name="education_qualification" class="form-control">
+                      <option value="5th_pass">5th Pass or less</option>
+                      <option value="6th_to_9th">Between 6th and 9th standard</option>
+                      <option value="10th_pass_and_above">10th Pass and above</option>
+                    </select>
+                  </label><br>
+
+                  <label>
+                    2.14 Are you eligible for Non-ECR category?
+                    <input type="radio" name="non_ecr" value="yes"> Yes
+                    <input type="radio" name="non_ecr" value="no"> No
+                  </label><br>
+
+                  <label>
+                    2.15 Visible Distinguishing Mark:
+                    <input type="text" class="form-control" name="distinguishing_mark" min="1" max="50" size="200">
+                  </label><br>
+
+                  <label>
+                    2.16 Aadhaar Number:
+                    <input type="text" class="form-control" name="aadhaar_number" min="12" max="12" size="200">
+                  </label><br>
+
+                  <label>
+                    2.17 Do you have a passport:
+                    <input type="radio" name="passport_exist" value="yes"> Yes
+                    <input type="radio" name="passport_exist" value="no"> No
+                  </label><br>
+
+                  <label>
+                    2.18 Details of latest held/existing/lost/damaged passport:
+                    <br>
+                    Passport Number:
+                    <input type="text" class="form-control" name="passport_number">
+                    <br>
+                    Date of Issue:
+                    <input type="date" class="form-control" name="passport_issue_date">
+                    <br>
+                    Place of Issue:
+                    <input type="text" class="form-control" name="passport_issue_place">
+                    <br>
+                    File Number:
+                    <input type="text" class="form-control" name="file_number">
+                    <br>
+                    2.19 Are you a holder of any other passport/identity certificate?
+                    <input type="radio" name="other_passport_exist" value="yes"> Yes
+                    <input type="radio" name="other_passport_exist" value="no"> No
+                    <br>
+                    <em>If yes, provide details:</em>
+                    <br>
+                    Passport Number:
+                    <input type="text" class="form-control" name="other_passport_number" size="200">
+                    <br>
+                    Date of Issue:
+                    <input type="date" class="form-control" name="other_passport_issue_date" size="200">
+                    <br>
+                    Place of Issue:
+                    <input type="text" class="form-control" name="other_passport_issue_place" size="200">
+                    <br>
+                    File Number:
+                    <input type="text" class="form-control" name="other_file_number" size="200">
+                  </label>
+                </fieldset>
+
+                <fieldset>
+                  <legend><b>3. Family Details</b></legend>
+
+                  <label>
+                    3.1 Father's Given Name (Given Name means First name followed by Middle name (If any)(Initials
+                      not
+                      allowed)):
+                    <input type="text" class="form-control" name="father_given_name" required min="1" max="45"
+                      size="200">
+                  </label>
+
+                  <label>
+                    Surname:
+                    <input type="text" class="form-control" name="father_surname" required min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    3.2 Legal Guardian's Given Name (if applicable):
+                    <input type="text" class="form-control" name="guardian_given_name" min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                  Surname:
+                    <input type="text" class="form-control" name="guardian_surname" min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    3.3 Mother's Given Name (Given Name means First name followed by Middle name (If any)(Initials
+                      not
+                      allowed)):
+                    <input type="text" class="form-control" name="mother_given_name" required min="1" max="45"
+                      size="200">
+                  </label>
+
+                  <label>
+                    Surname:
+                    <input type="text" class="form-control" name="mother_surname" required min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    3.4 Spouse's Given Name (Given Name means First name followed by Middle name (If any)(Initials
+                      not
+                      allowed)):
+                    <input type="text" class="form-control" name="spouse_given_name" min="1" max="45" size="200">
+                  </label>
+
+                  <label>
+                    Surname:
+                    <input type="text" class="form-control" name="spouse_surname" min="1" max="45" size="200">
+                  </label>
+
+
+                </fieldset>
+
+                <fieldset>
+                  <legend><b>4. Address Details</b></legend>
+
+                  <label>
+                    4.1 Present Residential Address:
+
+                    House No. and Street Name:
+                    <input type="text" class="form-control" name="present_house_no" required min="1" max="50"
+                      size="200">
+
+                    Village/Town/City:
+                    <input type="text" class="form-control" name="present_village" required min="1" max="50" size="200">
+
+                    District:
+                    <input type="text" class="form-control" name="present_district" required min="1" max="50"
+                      size="200">
+
+                    State/UT:
+                    <input type="text" class="form-control" name="present_state" required min="1" max="50" size="200">
+
+                    PIN:
+                    <input type="text" class="form-control" name="present_pin" required min="6" max="6" size="200">
+
+                    Mobile Number:
+                    <input type="text" class="form-control" name="present_mobile" required min="10" max="10" size="200">
+
+                    Telephone Number:
+                    <input type="text" class="form-control" name="present_telephone" min="10" max="10" size="200">
+
+                    Email ID:
+                    <input type="email" class="form-control" name="present_email" required min="5" max="50" size="200">
+                  </label>
+
+                  <label>
+                    4.2 Is your Permanent Address same as Present Address?
+                    <input type="radio" name="same_as_present" value="yes"> Yes
+                    <input type="radio" name="same_as_present" value="no"> No
+                  </label>
+
+                  <label>
+                    4.3 Permanent Address:
+
+                    House No. and Street Name:
+                    <input type="text" class="form-control" name="permanent_house_no" min="1" max="50" size="200">
+
+                    Village/Town/City:
+                    <input type="text" class="form-control" name="permanent_village" min="1" max="50" size="200">
+
+                    District:
+                    <input type="text" class="form-control" name="permanent_district" min="1" max="50" size="200">
+
+                    State/UT:
+                    <input type="text" class="form-control" name="permanent_state" min="1" max="50" size="200">
+
+                    PIN:
+                    <input type="text" class="form-control" name="permanent_pin" min="6" max="6" size="200">
+
+                    Mobile Number:
+                    <input type="text" class="form-control" name="permanent_mobile" min="10" max="10" size="200">
+
+                    Telephone Number:
+                    <input type="text" class="form-control" name="permanent_telephone" min="10" max="10" size="200">
+
+                    Email ID:
+                    <input type="email" class="form-control" name="permanent_email" min="5" max="50" size="200">
+                  </label>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                  <legend><b>5. Emergency Contact Details</b></legend>
+                  <br>  
+                  <label>
+                    5.1 Name and Address:
+
+                    Name:
+                    <input type="text" class="form-control" name="emergency_name" required min="1" max="50" size="200">
+
+                    House No. and Street Name:
+                    <input type="text" class="form-control" name="emergency_house_no" required min="1" max="50"
+                      size="200">
+
+                    Village/Town/City:
+                    <input type="text" class="form-control" name="emergency_village" required min="1" max="50"
+                      size="200">
+
+                    District:
+                    <input type="text" class="form-control" name="emergency_district" required min="1" max="50"
+                      size="200">
+
+                    State/UT:
+                    <input type="text" class="form-control" name="emergency_state" required min="1" max="50" size="200">
+
+                    PIN:
+                    <input type="text" class="form-control" name="emergency_pin" required min="6" max="6" size="200">
+
+                    Mobile Number:
+                    <input type="text" class="form-control" name="emergency_mobile" required min="10" max="10"
+                      size="200">
+
+                    Email ID:
+                    <input type="email" class="form-control" name="emergency_email" required min="5" max="50"
+                      size="200">
+                  </label>
+                </fieldset><br>
+
+
+                <legend><b>6. Previous Passport/ Application Details</b></legend>
+                <br>
+                <label>
+                  6.1 Have you ever held/hold any diplomatic/official passport?
+                  <input type="radio" name="diplomatic_passport_exist" value="yes"> Yes
+                  <input type="radio" name="diplomatic_passport_exist" value="no"> No
+                </label>
+
+                <label>
+                  6.2 Have you ever applied for passport, but not issued?
+                  <input type="radio" name="passport_applied_not_issued" value="yes"> Yes
+                  <input type="radio" name="passport_applied_not_issued" value="no"> No
+                </label>
+
+                <label>
+                6.3 Has your passport ever been impounded/revoked?
+                  <input type="radio" name="passport_impounded_revoked" value="yes"> Yes
+                  <input type="radio" name="passport_impounded_revoked" value="no"> No
+                </label>
+
+                <label>
+                6.4 Have you ever been refused passport?</b>
+                  <input type="radio" name="passport_refused" value="yes"> Yes
+                  <input type="radio" name="passport_refused" value="no"> No
+                </label>
+
+                <label>
+                6.5 Have you ever been granted short validity passport?
+                  <input type="radio" name="short_validity_passport" value="yes"> Yes
+                  <input type="radio" name="short_validity_passport" value="no"> No
+                </label>
+
+                <label>
+                6.6 Have you ever been granted passport for different name?
+                  <input type="radio" name="different_name_passport" value="yes"> Yes
+                  <input type="radio" name="different_name_passport" value="no"> No
+                </label>
+
+                <label>
+                If yes, specify name:
+                  <input type="text" class="form-control" name="different_name" min="1" max="50" size="200">
+                </label>
+
+                <label>
+                6.7 Are any criminal proceedings pending against you before a court in India?</b>
+                  <input type="radio" name="pending_criminal_proceedings" value="yes"> Yes
+                  <input type="radio" name="pending_criminal_proceedings" value="no"> No
+                </label>
+
+                <label>
+                6.8 Have you at any time during the period of 5 years immediately preceding the date of this
+                    application
+                    been convicted by a court in India for any criminal offence and sentenced to imprisonment for two
+                    years
+                    or more?
+                  <input type="radio" name="convicted_imprisonment" value="yes"> Yes
+                  <input type="radio" name="convicted_imprisonment" value="no"> No
+                </label>
+
+                <label>
+                   6.9 Have you ever been refused or denied passport?
+                  <input type="radio" name="passport_denied" value="yes"> Yes
+                  <input type="radio" name="passport_denied" value="no"> No
+                </label>
+
+                <label>
+                6.10 Has your passport ever been impounded by the government?
+                  <input type="radio" name="passport_impounded_government" value="yes"> Yes
+                  <input type="radio" name="passport_impounded_government" value="no"> No
+                </label>
+
+
+                <fieldset><br>
+                  <legend><b>7. Fee Details</b></legend>
+
+                  <label>
+                    <b>Amount to be Paid: </b>
+                    <input type="text" class="form-control" name="amount_paid" value="Rs. 2500" size="200" readonly>
+                  </label>
+
+
+                </fieldset>
+                <div class="form-buttons">
+                  <button type="submit">Submit</button>
+                  <button type="submit">Make Payment</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        
+    </section>
+  </main>
+
+  <!-- Footer Section-->
+  <footer id="footer" class="footer">
+
+    <div class="container-fluid text-center ">
+      <p>© <span>Copyright Content Owned by Ministry of External Affairs, Government of India</p>
+
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Application Website</title>
+  <!-- bootstrap link -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:lambesaurabh77@gmail.com">lambesaurabh77@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 7030794688</span></i>
+        </div>
+
+      </div>
+    </div><!-- End Top Bar -->
+
+    <div class="d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-end">
+
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="./DashBoard.html" class="active">Home<br></a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="./LoginPage.html">Logout</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+      <div class="container" id="newapp">
+        <h1 class="text-center">PASSPORT APPLICATION FORM</h1>
+        <h4 class="text-center">Fresh Application</h4>
+        <hr>
+        <div class="container-fluid " style="height: 520px; overflow-y: scroll; overflow-x:hidden ;">
+          <form action="/submit_passport_application" method="post">
+            <fieldset>
+              <legend><b>1. Service Required</b></legend>
+              <label>1.1 Type of Application:</label>
+              <label>
+                <input type="radio" name="application_type" value="normal" required> Normal
+              </label>
+              <label>
+                <input type="radio" name="application_type" value="tatkaal" required> Tatkaal
+              </label>
+              
+              <div>
+                <label>1.2 Type of Passport Booklet:</label>
+                <select name="passport_booklet_type" class="form-control" required>
+                  <option value="36_pages">36 Pages</option>
+                  <option value="60_pages">60 Pages</option>
+                </select>
+              </div>
+              
+              <div>
+                <label>1.3 Validity Required:</label>
+                <select name="validity_required" class="form-control" required>
+                  <option value="10_years">10 Years</option>
+                  <option value="up_to_age_18">Up to age 18 (For minors between 15 and 18 years)</option>
+                </select>
+              </div>
+            </fieldset><br>
+            <hr>
+            <fieldset>
+              <legend><b>2. Applicant Details</b></legend>
+              <label>
+                2.1 Given First Name:
+                <input type="text" class="form-control" name="given_name" required minlength="1" maxlength="45"
+                  size="200">
+              </label>
+
+              <label>
+                Surname:
+                <input type="text" class="form-control" name="surname" required minlength="1" maxlength="45" size="200">
+              </label>
+              <br>
+              <label>
+                2.2 Are you known by any other names (aliases)?
+                <input type="radio" name="known_by_other_names" value="yes"> Yes
+                <input type="radio" name="known_by_other_names" value="no"> No
+                <br>
+                <em>If yes, please provide the aliases :</em>
+                <input type="text" class="form-control" name="aliases" minlength="1" maxlength="45" size="200">
+              </label>
+
+              <label>
+                2.3 Have you ever changed your name?
+                <input type="radio" name="changed_name" value="yes"> Yes
+                <input type="radio" name="changed_name" value="no"> No
+                <br>
+                <em>If yes, please provide the previous name :</em>
+                <input type="text" class="form-control" name="previous_name" minlength="1" maxlength="45" size="200">
+              </label>
+
+              <label>
+                2.4 Date of Birth:
+                <input type="date" class="form-control" name="dob" required>
+              </label>
+
+              <label>
+                2.5 Place of Birth (Village or Town or City):
+                <input type="text" name="place_of_birth" required minlength="1" maxlength="25" size="200">
+              </label>
+
+              <label>
+                District (If born in India):
+                <input type="text" class="form-control" name="district" required minlength="1" maxlength="25"
+                  size="200">
+              </label>
+
+              <label>
+                State/UT (If born in India):
+                <input type="text" class="form-control" name="state" required minlength="1" maxlength="25" size="200">
+              </label>
+
+              <label>
+                Region/Country (If born abroad) If born before 15/08/1947 in a place now in Pakistan or Bangladesh,
+                write "Undivided India":
+                <input type="text" class="form-control" name="region_country" required minlength="1" maxlength="25"
+                  size="200">
+              </label>
+
+              <label>
+                2.6 Gender:
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="transgender"> Transgender
+              </label>
+              <br>
+              <label>
+                2.7 Marital Status:
+                <select name="marital_status" class="form-control" required>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widow_widower">Widow/Widower</option>
+                  <option value="separated">Separated</option>
+                </select>
+              </label>
+              <br>
+              <label>
+                2.8 Citizenship of India by:
+                <select name="citizenship" class="form-control" required>
+                  <option value="birth">Birth</option>
+                  <option value="descent">Descent</option>
+                  <option value="registration_naturalization">Registration/Naturalization</option>
+                </select>
+              </label>
+
+              <label>
+                2.9 PAN (If available):
+                <input type="text" class="form-control" name="pan" minlength="10" maxlength="10" size="200">
+              </label>
+
+              <label>
+                2.10 Voter ID (If available):
+                <input type="text" class="form-control" name="voter_id" size="200">
+              </label>
+
+              <label>
+                2.11 Employment Type:
+                <select name="employment_type" class="form-control" required>
+                  <option value="psu">PSU</option>
+                  <option value="government">Government</option>
+                  <option value="statutory_body">Statutory Body</option>
+                  <option value="retired_government_servant">Retired Government Servant</option>
+                  <option value="self_employed">Self Employed</option>
+                  <option value="private">Private</option>
+                  <option value="homemaker">Homemaker</option>
+                  <option value="not_employed">Not Employed</option>
+                  <option value="retired_private_service">Retired-Private Service</option>
+                  <option value="student">Student</option>
+                  <option value="others">Others</option>
+                  <option value="x">Owners, Partners & Directors of companies which are members of CII, FICCI &
+                    ASSOCHAM</option>
+                </select>
+              </label>
+
+              <label>
+                2.12 If employed in Government/ Statutory Body/ PSU, specify organization name:
+                <input type="text" class="form-control" name="organization_name" minlength="1" maxlength="30"
+                  size="200">
+              </label>
+
+              <label>
+                2.13 Is either of your parent (in case of minor)/ spouse, a government servant?:
+                <input type="radio" name="parent_spouse_government_servant" value="yes"> Yes
+                <input type="radio" name="parent_spouse_government_servant" value="no"> No
+              </label>
+              <br>
+              <label>
+                2.14 Educational Qualification:
+                <select name="education" class="form-control" required>
+                  <option value="7th_pass_or_less">7th pass or less</option>
+                  <option value="between_8th_and_9th_standard">Between 8th and 9th Standard</option>
+                  <option value="10th_pass_and_above">10th pass and above</option>
+                  <option value="graduate_and_above">Graduate and above</option>
+                </select>
+              </label>
+              <br>
+              <label>
+                2.15 Are you eligible for Non-ECR category?
+                <input type="radio" name="non_ecr" value="yes"> Yes
+                <input type="radio" name="non_ecr" value="no"> No
+              </label>
+
+              <label>
+                2.16 Visible Distinguishing Mark:
+                <input type="text" class="form-control" name="distinguishing_mark" required minlength="1" maxlength="30"
+                  size="200">
+              </label>
+
+              <label>
+                2.17 Aadhaar Number:
+                <input type="text" class="form-control" name="aadhaar_number" minlength="12" maxlength="12" size="200">
+              </label>
+
+              <label>
+                2.18 Family Details: Father's Name (Surnames not required):
+                <input type="text" class="form-control" name="father_name" required minlength="1" maxlength="30"
+                  size="200">
+              </label>
+
+              <label>
+                Mother's Name (Surnames not required):
+                <input type="text" class="form-control" name="mother_name" required minlength="1" maxlength="30"
+                  size="200">
+              </label>
+
+              <label>
+                Legal Guardian's Name (If applicable) (Surnames not required):
+                <input type="text" class="form-control" name="legal_guardian_name" minlength="1" maxlength="30"
+                  size="200">
+              </label>
+
+              <label>
+                Spouse's Name (If married) (Surnames not required):
+                <input type="text" class="form-control" name="spouse_name" minlength="1" maxlength="30" size="200">
+              </label>
+            </fieldset><br>
+            <hr>
+
+            <fieldset>
+              <legend><b>3. Residential Address</b></legend>
+              <label>
+                3.1 House No. and Street Name:
+                <input type="text" class="form-control" name="house_no_street" required minlength="1" maxlength="50"
+                  size="200">
+              </label>
+
+              <label>
+                3.2 Village/Town/City:
+                <input type="text" class="form-control" name="village_town_city" required minlength="1" maxlength="25"
+                  size="200">
+              </label>
+
+              <label>
+                3.3 District:
+                <input type="text" class="form-control" name="present_district" required minlength="1" maxlength="25"
+                  size="200">
+              </label>
+
+              <label>
+                3.4 State/UT:
+                <input type="text" class="form-control" name="present_state" required minlength="1" maxlength="25"
+                  size="200">
+              </label>
+
+              <label>
+                3.5 PIN:
+                <input type="text" class="form-control" name="present_pin" required minlength="6" maxlength="6"
+                  size="200">
+              </label>
+
+              <label>
+                3.6 Mobile No.:
+                <input type="tel" class="form-control" name="mobile_no" required minlength="10" maxlength="10"
+                  size="200">
+              </label>
+
+              <label>
+                3.7 Telephone No:
+                <input type="tel" class="form-control" name="telephone_no" minlength="10" maxlength="10" size="200">
+              </label>
+
+              <label>
+                3.8 Email ID:
+                <input type="email" class="form-control" name="email" required minlength="5" maxlength="50" size="200">
+              </label>
+            </fieldset>
+            <br>
+            <hr>
+
+            <fieldset>
+              <legend><b>4. Emergency Contact</b></legend>
+              <label>
+                4.1 Contact Name:
+                <input type="text" class="form-control" name="emergency_name" required minlength="1" maxlength="50"
+                  size="200">
+              </label>
+              <label>
+                4.2 Contact Address:
+                <input type="text" class="form-control" class="form-control" name="emergency_address" required
+                  minlength="1" maxlength="50" size="200">
+              </label>
+
+              <label>
+                4.3 Mobile/Telephone No.:
+                <input type="tel" class="form-control" name="emergency_contact_no" required minlength="10"
+                  maxlength="10" size="200">
+              </label>
+              <label>
+                4.4 E-mail ID:
+                <input type="email" class="form-control" name="emergency_contact_email" size="200" required>
+              </label>
+            </fieldset>
+            <br>
+            <hr>
+            <fieldset>
+              <legend><b>5. Other details</b></legend><br>
+              5.1 Provide the following details if there are any criminal proceedings pending
+              against the applicant.<br>
+              <label>
+                5.1.1 Are any proceedings in respect of an offence alleged to have been committed by
+                you pending before a criminal court in India?
+                <input type="radio" name="criminal_proceedings_pending" value="yes"> Yes
+                <input type="radio" name="criminal_proceedings_pending" value="no"> No
+              </label>
+
+              <label>
+                5.1.2 Has any warrant or summons for your appearance been issued & pending before
+                a court under any law for the time being in force?
+                <input type="radio" name="warrant_summons_pending" value="yes"> Yes
+                <input type="radio" name="warrant_summons_pending" value="no"> No
+              </label>
+
+              <label>
+                5.1.3 Has a warrant for your arrest been issued by a court under any law for the time
+                being in force?
+                <input type="radio" name="arrest_warrant_issued" value="yes"> Yes
+                <input type="radio" name="arrest_warrant_issued" value="no"> No
+              </label>
+
+              <label>
+                5.1.4 Has an order prohibiting your departure from India been made by any court?
+                If yes, fill Column 5.4 of Supplementary Form
+                <input type="radio" name="departure_prohibited" value="yes"> Yes
+                <input type="radio" name="departure_prohibited" value="no"> No
+              </label>
+
+              <br>
+              <b>5.2 Provide the following details if the applicant has been convicted by a court in
+                India.</b>
+
+              <label>
+                5.2.1 Have you, at any time during the period of five years immediately preceding the
+                date of this application, been convicted by a court in India for any offence
+                involving moral turpitude and sentenced in respect thereof to imprisonment for
+                not less than two years?
+                <input type="radio" name="convicted_moral_turpitude" value="yes"> Yes
+                <input type="radio" name="convicted_moral_turpitude" value="no"> No
+              </label>
+              <br>  
+              <b>5.3 Provide the following details if the applicant has been refused/denied passport.</b><br>
+              <label>
+                5.3.1 Have you ever been refused/denied passport?
+                <input type="radio" name="refused_passport" value="yes"> Yes
+                <input type="radio" name="refused_passport" value="no"> No
+              </label>
+              <label>
+
+                <label>
+                  5.3.2 Has your passport ever been impounded?
+                  <input type="radio" name="passport_impounded" value="yes"> Yes
+                  <input type="radio" name="passport_impounded" value="no"> No
+                </label>
+                <label>
+
+                  <label>
+                    5.3.3 Has your passport ever been revoked?
+                    <input type="radio" name="passport_revoked" value="yes"> Yes
+                    <input type="radio" name="passport_revoked" value="no"> No
+                  </label>
+
+                  <label>
+
+                    <b>5.4 Provide the following details if applicant has applied for or been granted foreign
+                      citizenship.</b>
+
+                    <label>
+                      5.4.1 Have you ever been granted citizenship by any other region/country?
+                      <input type="radio" name="granted_citizenship" value="yes"> Yes
+                      <input type="radio" name="granted_citizenship" value="no"> No
+                    </label>
+
+                    <label>
+                      5.4.2 Have you ever held the passport of any other region/country at any time?
+                      <input type="radio" name="held_foreign_passport" value="yes"> Yes
+                      <input type="radio" name="held_foreign_passport" value="no"> No
+                    </label>
+                    <br>
+                    <label>
+                      5.4.3 Have you ever surrendered your Indian passport?
+                      <input type="radio" name="surrendered_indian_passport" value="yes"> Yes
+                      <input type="radio" name="surrendered_indian_passport" value="no"> No
+                    </label>
+                    <br>  
+                    <label>
+                      5.4.4 Have you ever applied for renunciation of Indian citizenship?
+                      <input type="radio" name="renounced_indian_citizenship" value="yes"> Yes
+                      <input type="radio" name="renounced_indian_citizenship" value="no"> No
+                    </label>
+                    <br>
+                    <b>5.5 Provide the following details if applicant has returned to India on Emergency
+                      Certificate.</b>
+                    <label>
+                      5.5.1 Have you ever returned to India on Emergency Certificate (EC)?
+                      <input type="radio" name="returned_on_ec" value="yes"> Yes
+                      <input type="radio" name="returned_on_ec" value="no"> No
+                    </label>
+                    <br>
+                    <label>
+                      5.5.2 Have you ever been deported from any country?
+                      <input type="radio" name="deported" value="yes"> Yes
+                      <input type="radio" name="deported" value="no"> No
+                    </label><br>
+                    <label>
+                      5.5.3 Have you ever been repatriated from any country back to India?
+                      <input type="radio" name="repatriated" value="yes"> Yes
+                      <input type="radio" name="repatriated" value="no"> No
+                    </label>
+
+            </fieldset>
+            <br>
+            <fieldset>
+              <hr>
+              <legend><b>6. Self Declaration</b></legend>
+              <p>I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired
+                  citizenship or
+                  travel document of any other country. I have not lost, surrendered or been deprived of the citizenship
+                  of India.
+                  I have not contravened any of the conditions relating to the possession and use of an Indian passport.
+              </p>
+  
+              <p>
+                  I affirm that the information and particulars given by me in this form are true and correct. I further
+                  state that I
+                  am not suppressing any material information in this regard. I further affirm that the enclosures and
+                  documentary
+                  proof submitted in support of my application for an Indian passport are authentic and solely pertain to
+                  me and
+                  I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted if found
+                  otherwise.
+                  I am aware that under the Passports Act, 1967 it is a criminal offence to furnish any false information
+                  or to
+                  suppress any material information with a view to obtaining passport or travel document.
+              </p>
+  
+              <p>
+                  I have read and understood the contents of the above and by submitting this form certify that all the
+                  information
+                  submitted by me in the form is bonafide.
+              </p>
+  
+              <label>
+                  Place:
+                  <input type="text" class="form-control" name="declaration_place" size="200" required>
+              </label>
+  
+              <label>
+                  Date:
+                  <input type="date" class="form-control" name="declaration_date" size="200" required>
+              </label>
+              <br>
+              <label>
+                  Upload Signature/ Left Hand Thumb Impression of Applicant (If applicant is minor, either parent to
+                  sign):
+                  <input type="file" class="form-control" name="applicant_signature" required>
+              </label>
+              
+  
+              <label>
+                  Signature/ Left Hand Thumb Impression of Illiterate Applicant and Minors who cannot sign:
+                  <input type="file" class="form-control" name="left_hand_thumb_imp" required>
+              </label>
+              
+  
+              <label>
+                  Please upload your unsigned recent colour photograph with white background of size 4.5cm X 3.5cm:
+                  <input type="file" class="form-control" name="applicant_photo"  required>
+              </label>
+             
+          </fieldset>
+            <div class="form-buttons m-2">
+              <button type="submit">Submit</button>
+              <button type="submit">Make Payment</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer Section-->
+  <footer id="footer" class="footer">
+
+    <div class="container-fluid text-center ">
+      <p>© <span>Copyright Content Owned by Ministry of External Affairs, Government of India</p>
+
+    </div>
+  </footer>
+</body>
+
+</html>
