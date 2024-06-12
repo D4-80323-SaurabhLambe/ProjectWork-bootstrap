@@ -60,6 +60,8 @@ body {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #newapp {
   border-radius: 30px;
