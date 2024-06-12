@@ -44,6 +44,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  height: 100%;
 }
 
 .form-group {
@@ -88,7 +89,7 @@ body {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
-  height: 100vh;
+  height: 90vh;
   overflow: auto;
   height: 90vh;
 }
@@ -382,6 +383,7 @@ section,
   height: 100vh;
   position: relative;
   padding: 130px 0 0 0;
+  
 }
 
 .hero h2 {
