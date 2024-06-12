@@ -89,8 +89,8 @@ body {
   background-color: #FEFAE0;
   color: black;
   height: 100vh;
-  scroll-behavior: auto;
-  
+  overflow: auto;
+  height: 90vh;
 }
 #secondaryDiv{
   border-radius: 30px;
