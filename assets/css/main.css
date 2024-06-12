@@ -63,7 +63,7 @@ body {
   color: black;
   padding-top: 20px;
   padding-bottom: 20px;
-  overflow: auto;
+  overflow-y: auto;
   height: 80vh;
 }
 #renewal {
@@ -91,7 +91,7 @@ body {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
-  overflow: auto;
+  overflow-y: auto;
   height: 90vh;
 }
 #secondaryDiv{
