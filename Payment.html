@@ -57,7 +57,7 @@
     <main class="main">
 
         <section id="hero" class="hero section">
-            <div class="container" style="height: 600px;">
+            <div class="container" style="height: 560px;">
                 <div class="row">
                     <div class="col-3  border border-1" id="secondaryDiv">
                         <div class="sidebar">
@@ -99,52 +99,54 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-9 border border-1 border-dark" id="payment" style="height: 500px; overflow: auto;">
+                    <div class="col-9 border border-1 border-dark" id="payment" >
                         <h4 class="text-center">Payment Details</h4>
-
-                        <div class="form-group">
-                            <label for="card_number">Application No.</label>
-                            <input type="text" class="form-control" id="appid" value="1258796856">
+                        <div style="overflow-y: scroll; height: 500px; overflow-x: hidden;">
+                            <div class="form-group">
+                                <label for="card_number">Application No.</label>
+                                <input type="text" class="form-control" id="appid" value="1258796856">
+                            </div>
+                            <form action="#" method="POST">
+                                <div class="form-group">
+                                    <label for="payment_method">Payment Method:</label>
+                                    <select id="payment_method" class="form-control" name="payment_method">
+                                        <option value="card">Card Payment</option>
+                                        <option value="upi">UPI Payment</option>
+                                        <option value="netbanking">Net Banking</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card_number">Card Number:</label>
+                                    <input type="text" class="form-control" id="card_number" name="card_number"
+                                        placeholder="1234 5678 9012 3456" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiry_date">Expiry Date (MM/YYYY):</label>
+                                    <input type="month" class="form-control" id="expiry_date" name="expiry_date"
+                                        placeholder="MM/YYYY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV:</label>
+                                    <input type="number" class="form-control" id="cvv" name="cvv" min="000" max="999"
+                                        placeholder="123" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardholder_name">Cardholder Name:</label>
+                                    <input type="text" class="form-control" id="cardholder_name" name="cardholder_name"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount">Amount:</label>
+                                    <input type="text" class="form-control" id="amount" name="amount" value="[Amount]"
+                                        readonly>
+                                </div>
+                                <div class="form-buttons ">
+                                    <button class="btn btn-success mb-2" type="submit">Make Payment</button>
+                                    <button class="btn btn-warning mb-2" type="reset">Clear</button>
+                                </div>
+                            </form>
                         </div>
-                        <form action="#" method="POST">
-                            <div class="form-group">
-                                <label for="payment_method">Payment Method:</label>
-                                <select id="payment_method" class="form-control" name="payment_method">
-                                    <option value="card">Card Payment</option>
-                                    <option value="upi">UPI Payment</option>
-                                    <option value="netbanking">Net Banking</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="card_number">Card Number:</label>
-                                <input type="text" class="form-control" id="card_number" name="card_number"
-                                    placeholder="1234 5678 9012 3456" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="expiry_date">Expiry Date (MM/YYYY):</label>
-                                <input type="month" class="form-control" id="expiry_date" name="expiry_date"
-                                    placeholder="MM/YYYY" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cvv">CVV:</label>
-                                <input type="number" class="form-control" id="cvv" name="cvv" min="000" max="999"
-                                    placeholder="123" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cardholder_name">Cardholder Name:</label>
-                                <input type="text" class="form-control" id="cardholder_name" name="cardholder_name"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <label for="amount">Amount:</label>
-                                <input type="text" class="form-control" id="amount" name="amount" value="[Amount]"
-                                    readonly>
-                            </div>
-                            <div class="form-buttons ">
-                                <button class="btn btn-success mb-2" type="submit">Make Payment</button>
-                                <button class="btn btn-warning mb-2" type="reset">Clear</button>
-                            </div>
-                        </form>
+                      
 
                     </div>
                 </div>
@@ -155,10 +157,44 @@
 
     <!-- Footer Section-->
     <footer id="footer" class="footer">
-        <div class="container-fluid text-center ">
-            <p>© <span>Copyright Content Owned by Ministry of External Affairs, Government of India</p>
-
-        </div>
+        <div class="container ">
+            <div class="row ">
+      
+              <div class="col-4 footer-links ">
+                <h4>Legal Information</h4>
+                <ul>
+                  <li><a href="#">Terms & Conditions</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Copyright Policy</a></li>
+                  <li><a href="#">Terms of service</a></li>
+                  <li><a href="#">Hyperlinking Policy</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-4  footer-links">
+                <h4>External Links</h4>
+                <ul>
+                  <li><a href="#">Ministry of External Affairs</a></li>
+                  <li><a href="#">Visa on Arrival</a></li>
+                  <li><a href="#">National Portal of India</a></li>
+                  <li><a href="#">Visa Services</a></li>
+                  <li><a href="#">Bureau of Immigration</a></li>
+                </ul>
+              </div>
+      
+              <div class="col-4  footer-contact text-center text-md-start">
+                <h4>Contact Us</h4>
+                <p>8, Patiala House, Tilak Marg,</p>
+                <p>New Delhi-110001</p>
+                <p>India</p>
+                <p class="mt-4"><strong>Phone:</strong> <span>+91 11 23387013</span></p>
+                <p><strong>Email:</strong> <span>ctopassportseva@mea.gov.in</span></p>
+              </div>
+            </div>
+            <div class="container-fluid copyright text-center mt-4">
+              <p>© <span>Copyright Content Owned by Ministry of External Affairs, Government of India</p>
+            </div>
+          </div>
     </footer>
 </body>
 

@@ -63,43 +63,43 @@ body {
   color: black;
   padding-top: 20px;
   padding-bottom: 20px;
-  overflow-y: auto;
-  height: 80vh;
+  height: 75vh;
 }
 #renewal {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
   padding-top: 20px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
+  height: 80vh;
 }
 #newapp {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
   padding-bottom: 50px;
+  
 }
 #feedbackForm, 
 #statustracker {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
-  
+  height: 80vh;
 }
 
 #payment {
   border-radius: 30px;
   background-color: #FEFAE0;
   color: black;
-  overflow-y: auto;
-  height: 90vh;
+  height: 80vh;
 }
 #secondaryDiv{
   border-radius: 30px;
   background-color: #343a40;
   padding: 15px;
   color: white; 
-  height: 70vh;
+  height: 80vh;
 }
 #secondaryDiv .nav-link {
   color: white;
