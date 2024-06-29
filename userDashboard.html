@@ -16,14 +16,13 @@
 
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11">
-    <link rel="stylesheet" href="./assets/css/login.css">
 
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/main.css">
-
+   
 </head>
 
 <body>
@@ -40,14 +39,15 @@
             </div>
             <nav class="navbar navbar-expand-lg navbar-dark navbar-header mt-3">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link " href="./userDashboard.html">
+                                <a class="nav-link active" href="./userDashboard.html">
                                     <i class="bi bi-speedometer2"></i> Dashboard
                                 </a>
                             </li>
@@ -62,12 +62,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="./payment.html">
+                                <a class="nav-link" href="./payment.html">
                                     <i class="fa fa-credit-card"></i> Make Payment
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " href="./applicationStatus.html">
+                                <a class="nav-link" href="./applicationStatus.html">
                                     <i class="bi bi-table"></i> Application Status
                                 </a>
                             </li>
@@ -101,68 +101,30 @@
 
     <main class="container my-4">
         <div class="row justify-content-center align-items-center">
-            <!-- Carousel Section -->
+            <!-- Image Section -->
             <div class="col-md-4">
                 <div class="image-container">
-                    <img src="./assets/images/passportImage3.jpg" alt="Passport Image" class="img-fluid">
+                    <img src="./assets/images/passportImage1.jpg"  alt="Passport Image" class="img-fluid  ">
                 </div>
             </div>
-            <!-- Payment Details Section -->
-            <div class="col-md-8 mb-4" id="paymentDetails">
-                <h4 class="text-center mb-4">Payment Details</h4>
-                <form  class="needs-validation" novalidate>
-                    <div class="form-group">
-                        <label for="appid">Application No.</label>
-                        <input type="text" class="form-control" id="appid" value="1258796856" required>
-                        <div class="invalid-feedback">Please provide a valid Application number.</div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="payment_method">Payment Method:</label>
-                            <select id="payment_method" class="form-control" name="payment_method">
-                                <option value="card">Card Payment</option>
-                                <option value="upi">UPI Payment</option>
-                                <option value="netbanking">Net Banking</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="card_number">Card Number:</label>
-                            <input type="text" class="form-control" id="card_number" name="card_number"
-                                placeholder="1234 5678 9012 3456" required>
-                            <div class="invalid-feedback">Please provide a valid card number.</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="expiry_date">Expiry Date (MM/YYYY):</label>
-                            <input type="text" class="form-control" id="expiry_date" name="expiry_date"
-                                placeholder="MM/YYYY" required>
-                            <div class="invalid-feedback">Please provide the expiry date.</div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="cvv">CVV:</label>
-                            <input type="number" class="form-control" id="cvv" name="cvv" min="0" max="999" required>
-                            <div class="invalid-feedback">Please provide the 3 digit CVV.</div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-6">
-                            <label for="cardholder_name">Cardholder Name:</label>
-                            <input type="text" class="form-control" id="cardholder_name" name="cardholder_name" required>
-                            <div class="invalid-feedback">Please provide the cardholder's name.</div>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="amount">Amount:</label>
-                            <input type="text" class="form-control" id="amount" name="amount" value="₹ 2500" readonly>
-                        </div>
-                    </div>
-                    <div class="form-buttons text-center mt-4">
-                        <button class="btn btn-success me-2" type="submit">Make Payment</button>
-                        <button class="btn btn-warning" type="reset">Clear</button>
-                    </div>
-                </form>
+            <!-- Content Area -->
+            <div class="col-md-8 mt-4" id="contentDiv">
+                <div class="content center-content rounded bg-burlywood p-4">
+                    <h3 class="text-center mb-4">Welcome to Passport Application HomePage</h3>
+                    <h5>Steps to Apply for New Passport</h5>
+                    <ol type="1">
+                        <li>Register/login on the official passport website.</li>
+                        <li>Fill the application form, upload required documents.</li>
+                        <li>Pay the fee.</li>
+                        <li>Schedule appointment.</li>
+                        <li>Visit Passport Seva Kendra (PSK) for verification.</li>
+                        <li>Track application status.</li>
+                    </ol>
+                    <p>If you have any questions or concerns about the passport application process, please <a
+                            href="https://portal2.passportindia.gov.in/AppOnlineProject/ccgm/informationAction">Contact
+                            us</a>. We are here to help you.</p>
+                </div>
             </div>
-            
         </div>
     </main>
 
@@ -170,9 +132,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark navbar-footer">
                 <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarFooter" aria-controls="navbarFooter" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarFooter"
+                        aria-controls="navbarFooter" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-center" id="navbarFooter">
@@ -204,22 +165,6 @@
 
     <!-- SweetAlert2 library -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Bootstrap form validation -->
-    <script src="./assets/js/login.js"></script>
-
-    <!-- Carousel Script -->
-    <script>
-        // Activate Carousel
-        document.addEventListener('DOMContentLoaded', function () {
-            var myCarousel = document.getElementById('carouselExampleControls');
-            var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 2000, // Slide every 2 seconds
-                pause: 'hover', // Pause on mouse hover
-                wrap: true // Loop through slides
-            });
-        });
-    </script>
 
 </body>
 

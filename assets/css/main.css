@@ -1,394 +1,286 @@
-:root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Montserrat", sans-serif;
-  --nav-font: "Poppins", sans-serif;
-}
-
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root {
-  --background-color: #ffffff;
-  /* Background color for the entire website, including individual sections */
-  --default-color: #222222;
-  /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #172a28;
-  /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #008374;
-  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --contrast-color: #ffffff;
-  /* The contrast color is used for elements when the background color is one of the heading, accent, or default colors. Its purpose is to ensure proper contrast and readability when placed over these more dominant colors */
-}
-
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
-:root {
-  --nav-color: #ffffff;
-  /* The default color of the main navmenu links */
-  --nav-hover-color: #f85a40;
-  /* Applied to main navmenu links when they are hovered over or active */
-  --nav-dropdown-background-color: #ffffff;
-  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #01433c;
-  /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #f85a40;
-  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
-}
-
-/* Smooth scroll */
-:root {
-  scroll-behavior: smooth;
-}
-
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+/* General Body Styles */
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-  height: 100%;
+    background-color: #EFEBDF; /* Nice background color for the page */
 }
 
-.form-group {
-  margin: 10 px;
+/* Header Styles */
+header {
+    background-color: #343a40; /* Background color of the header */
+    color: white; /* Text color */
+    padding: 10px 0; /* Vertical padding */
 }
 
-#loginId {
-  border-radius: 60px;
-  background-color: #FEFAE0;
-  color: #007b6f;
+.header-content {
+    text-align: center;
+    margin-top: 30px; /* Adjust top margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#signup {
-  border-radius: 30px;
-  background-color: #FEFAE0;
-  color: black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 75vh;
-}
-#renewal {
-  border-radius: 30px;
-  background-color: #FEFAE0;
-  color: black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  height: 80vh;
-}
-#newapp {
-  border-radius: 30px;
-  background-color: #FEFAE0;
-  color: black;
-  padding-bottom: 50px;
-  
-}
-#feedbackForm, 
-#statustracker {
-  border-radius: 30px;
-  background-color: #FEFAE0;
-  color: black;
-  height: 80vh;
+.header-content img {
+    width: 100px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-right: 20px; /* Space between image and text */
 }
 
-#payment {
-  border-radius: 30px;
-  background-color: #FEFAE0;
-  color: black;
-  height: 80vh;
+.header-content:hover  img {
+    transform: scale(1.03); /* Scale up image on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
-#secondaryDiv{
-  border-radius: 30px;
-  background-color: #343a40;
-  padding: 15px;
-  color: white; 
-  height: 80vh;
-}
-#secondaryDiv .nav-link {
-  color: white;
-}
-#secondaryDiv .nav-link.active {
-  background-color: #007bff;
-} 
-#secondaryDiv .nav-link:hover {
-  background-color: #495057;
-}
-#secondaryDiv .profile {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
-  text-align: center;
-}
-#secondaryDiv .profile img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-#secondaryDiv .profile a {
-  color: white;
-  text-decoration: none;
+/* Navbar Styles */
+.navbar-header {
+    background-color: #212529; /* Background color of the header navbar */
+    border-radius: 10px; /* Rounded corners for the navbar */
 }
 
-.form-group input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  margin: 5px;
+.navbar-footer {
+    background-color: #212529; /* Background color of the footer navbar */
+    border: none; /* Remove border */
 }
 
+.navbar-header .navbar-nav {
+    margin-left: auto; /* Align navbar content to the right */
+}
 
+.navbar-footer .navbar-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Divide footer navbar into 3 equal sections */
+    gap: 0; /* Remove gap between items */
+    justify-content: center; /* Center align items */
+}
+
+/* Ensure active class is displayed correctly */
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #ffc107 !important; /* Highlight color for active link */
+}
+
+/* Image Container Styles */
+.image-container img {
+    width: 100%; /* Full width within the container */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+    border-radius: 60px; /* Rounded corners for images */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.image-container:hover img {
+    transform: scale(1.03); /* Scale up image on hover */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Background color of the footer */
+    color: white; /* Text color */
+    padding: 20px 0; /* Vertical padding */
+}
+
+/* Custom Sidebar Styles */
+.sidebar {
+    border-radius: 30px;
+    background-color: #343a40;
+    padding: 15px;
+    color: white;
+    height: 80vh;
+    border: 2px solid #ffc107; /* Yellow border color */
+    overflow-y: auto; /* Enable scrolling for sidebar */
+}
+
+.sidebar .fs-4 {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    margin-bottom: 10px;
+}
+
+.sidebar hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 20px 0;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    transition: color 0.2s;
+}
+
+.sidebar .nav-link:hover {
+    color: white;
+}
+
+.sidebar .nav-link.active {
+    color: white;
+    font-weight: bold;
+}
+
+.sidebar .nav-pills .nav-link i {
+    margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header content vertically on small screens */
+        text-align: center;
+    }
+
+    .header-content img {
+        margin-bottom: 10px; /* Adjust margin for image on small screens */
+    }
+
+    .sidebar {
+        height: auto; /* Adjust height for smaller screens */
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Custom CSS for gutter between carousel and content */
+@media (min-width: 992px) {
+    .content {
+        margin-left: 15px; /* Adjust as needed */
+    }
+}
+
+@media (max-width: 991.98px) {
+    .carousel,
+    .content {
+        margin-bottom: 15px; /* Adjust as needed */
+    }
+}
+
+/* Form Styles */
+.signup-form-container {
+    background-color: burlywood; /* Form background color */
+    border-radius: 20px; /* Rounded corners for the form */
+    padding: 40px; /* Padding inside the form container */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Adding a subtle shadow effect */
+    border: 2px solid #343a40; /* Border color */
+}
+
+.signup-form-container h2 {
+    margin-bottom: 30px; /* Bottom margin for form headings */
+    
+}
 
 .form-buttons {
-  text-align: center;
-
+    margin-top: 20px; /* Top margin for form buttons */
 }
 
 .form-buttons button {
-  margin: 5px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  border-radius: 40px;
-
+    margin: 0 5px; /* Margin between form buttons */
 }
 
-.additional-links a {
-  text-align: center;
-  display: block;
-  margin-top: 10px;
-  color: #007b6f
+.form-buttons button:hover {
+    background-color: lightgreen; /* Background color on hover */
+    color: black; /* Text color on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adding a shadow on hover */
 }
 
-.additional-links a:hover {
-  text-decoration: underline;
-  color: blue;
+/* Highlight input fields on hover */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover, 
+select:hover {
+    border-color: #007bff; /* Change border color to a highlight color */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a light shadow for emphasis */
+    cursor: pointer; /* Optional: Change cursor on hover */
 }
 
-
-
-/*--------------------------------------------------------------
-# Global Header
---------------------------------------------------------------*/
-.header {
-  --background-color: #008374;
-  --heading-color: #ffffff;
-  color: var(--default-color);
-  transition: all 0.5s;
-  z-index: 997;
-  background-color: var(--background-color);
+input[type="radio"],
+input[type="checkbox"] {
+    cursor: pointer;
 }
 
-.header .topbar {
-  background-color: color-mix(in srgb, var(--accent-color) 90%, black 10%);
-  height: 40px;
-  padding: 0;
-  font-size: 14px;
-  transition: all 0.5s;
+/* Link Styles */
+.text-center a {
+    text-decoration: none; /* Remove underline from all links */
+    position: relative; /* Enable absolute positioning for pseudo-element */
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition for animation */
+    color: #fff; /* Default color for links */
 }
 
-
-
-.header .topbar .contact-info i a,
-.header .topbar .contact-info i span {
-  padding-left: 5px;
-  color: var(--contrast-color);
+.text-center a:hover {
+    color: green; /* Change text color on hover */
 }
 
-
-
-.header .topbar .social-links a {
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
-  line-height: 0;
-  transition: 0.3s;
-  margin-left: 20px;
+.text-center a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: #ffc107; /* Color of the underline */
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
 }
 
-
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/* Desktop Navigation */
-
-
-.navmenu ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  list-style: none;
-  align-items: center;
+.text-center a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
 
-.navmenu li {
-  position: relative;
+#contentDiv {
+    background-color: burlywood; /* Light background color */
+    border-radius: 60px; /* Rounded border with large radius */
+    padding: 20px; /* Padding inside the div */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.navmenu>ul>li {
-  white-space: nowrap;
-  padding: 15px 14px;
-}
-
-.navmenu>ul>li:last-child {
-  padding-right: 0;
-}
-
-.navmenu a,
-.navmenu a:focus {
-  color: var(--nav-color);
-  font-size: 15px;
-  padding: 0 2px;
-  font-family: var(--nav-font);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  white-space: nowrap;
-  transition: 0.3s;
-  position: relative;
-}
-
-.navmenu a i,
-.navmenu a:focus i {
-  font-size: 12px;
-  line-height: 0;
-  margin-left: 5px;
-  transition: 0.3s;
-}
-
-.navmenu>ul>li>a:before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  bottom: -6px;
-  left: 0;
-  background-color: var(--nav-hover-color);
-  visibility: hidden;
-  width: 0px;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-/*--------------------------------------------------------------
-# Global Footer
---------------------------------------------------------------*/
-.footer {
-  --background-color: var(--accent-color);
-  --default-color: #fff;
-  --heading-color: #fff;
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
-  position: relative;
-}
-
-.footer .footer-top {
-  padding-top: 50px;
+/* Specific Section Styles */
+#statustracker,
+#paymentDetails {
+    background-color: burlywood; /* Light background color */
+    border-radius: 60px; /* Rounded border with large radius */
+    padding: 20px; /* Padding inside the div */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 
-
-.footer .social-links a:hover {
-  color: var(--default-color);
-  border-color: var(--default-color);
+#statustracker input.form-control {
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.footer h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
+#statustracker input.form-control:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Hover effect with subtle shadow */
+}
+#feebackDiv {
+    margin: 0 auto; /* Center content */
+    padding: 20px;
+    background-color: burlywood;
+    border: 2px solid powderblue;
+    border-radius: 60px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.footer .footer-links {
-  margin-bottom: 30px;
+.login-form-container {
+    background-color: burlywood;
+    border-radius: 20px;
+    /* Increased border radius for the login form */
+    padding: 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    /* Adding a subtle shadow for better aesthetics */
 }
 
-.footer .footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.login-form-container h2 {
+    margin-bottom: 30px;
 }
 
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
+#loginBtn:hover {
+    background-color: lightgreen;
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Adding a shadow on hover */
 }
 
-.footer .footer-links ul li {
-  padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
-}
-
-.footer .footer-links ul a {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  display: inline-block;
-  line-height: 1;
-}
-
-.footer .footer-links ul a:hover {
-  color: var(--default-color);
-}
-
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer .copyright {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  border-top: 3px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
-}
-
-.footer .credits {
-  margin-top: 4px;
-  font-size: 13px;
-}
-
-/*--------------------------------------------------------------
-# Global Sections
---------------------------------------------------------------*/
-section,
-.section {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 60px 0;
-  scroll-margin-top: 112px;
-  overflow: clip;
-}
-
-@media (max-width: 1199px) {
-
-  section,
-  .section {
-    scroll-margin-top: 100px;
-  }
-}
-
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-.hero {
-  --background-color: var(--accent-color);
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  padding: 130px 0 0 0;
-  
-}
-
-.hero h2 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
+#resetBtn:hover {
+    background-color: lightyellow;
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    /* Adding a shadow on hover */
 }
